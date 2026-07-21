@@ -140,253 +140,214 @@ Utilizan:
 
 # Diagrama UML (Mermaid)
 
+```mermaid
 classDiagram
 direction TB
 
-%% =========================
-%% ENUM
-%% =========================
-
 class Calidad {
-    <<enumeration>>
+    <<Enumeration>>
     SD
     HD
     UHD_4K
+
     +getPrecioMensual() double
 }
 
-%% =========================
-%% MODELO
-%% =========================
+class Contenido {
+    <<Abstract>>
 
-class Contenido{
-    <<abstract>>
-    -long id
-    -String titulo
-    -String genero
-    -Calidad calidadDisponible
+    -id : long
+    -titulo : String
+    -genero : String
+    -calidadDisponible : Calidad
 
     +getId() long
-    +setId(long)
+    +setId(id : long)
     +getTitulo() String
-    +setTitulo(String)
+    +setTitulo(titulo : String)
     +getGenero() String
-    +setGenero(String)
+    +setGenero(genero : String)
     +getCalidadDisponible() Calidad
-    +setCalidadDisponible(Calidad)
+    +setCalidadDisponible(calidad : Calidad)
 
-    +reproducir()* String
-    +obtenerDetalles()* String
+    +reproducir() String
+    +obtenerDetalles() String
 }
 
-class Pelicula{
-    -int duracionMinutos
+class Pelicula {
+    -duracionMinutos : int
 
     +getDuracionMinutos() int
-    +setDuracionMinutos(int)
+    +setDuracionMinutos(duracion : int)
+
     +reproducir() String
     +obtenerDetalles() String
 }
 
-class Serie{
-    -int temporadas
+class Serie {
+    -temporadas : int
 
     +getTemporadas() int
-    +setTemporadas(int)
+    +setTemporadas(temp : int)
+
     +reproducir() String
     +obtenerDetalles() String
 }
 
-class Documental{
-    -String director
+class Documental {
+    -director : String
 
     +getDirector() String
-    +setDirector(String)
+    +setDirector(director : String)
+
     +reproducir() String
     +obtenerDetalles() String
 }
 
-class Usuario{
-    -String nombre
-    -String email
+class Usuario {
+    -nombre : String
+    -email : String
 
     +getNombre() String
-    +setNombre(String)
+    +setNombre(nombre : String)
     +getEmail() String
-    +setEmail(String)
+    +setEmail(email : String)
 }
 
-class Suscripcion{
-    -long id
-    -String usuarioEmail
-    -Calidad calidad
-    -double costoMensual
-    -String fechaInicio
+class Suscripcion {
+    -id : long
+    -usuarioEmail : String
+    -calidad : Calidad
+    -costoMensual : double
+    -fechaInicio : String
 
     +getId() long
-    +setId(long)
+    +setId(id : long)
     +getUsuarioEmail() String
-    +setUsuarioEmail(String)
+    +setUsuarioEmail(email : String)
     +getCalidad() Calidad
-    +setCalidad(Calidad)
+    +setCalidad(calidad : Calidad)
     +getCostoMensual() double
-    +setCostoMensual(double)
+    +setCostoMensual(costo : double)
     +getFechaInicio() String
-    +setFechaInicio(String)
+    +setFechaInicio(fecha : String)
 }
 
-%% =========================
-%% DAO
-%% =========================
+class ContenidoDAO {
+    <<Interface>>
 
-class ContenidoDAO{
-    <<interface>>
-
-    +guardar(Contenido) boolean
-    +actualizar(Contenido) boolean
-    +eliminar(long) boolean
-    +listarTodos() List~Contenido~
-    +listarPorGenero(String) List~Contenido~
+    +guardar(contenido : Contenido) boolean
+    +actualizar(contenido : Contenido) boolean
+    +eliminar(id : long) boolean
+    +listarTodos() List
+    +listarPorGenero(genero : String) List
 }
 
-class SuscripcionDAO{
-    <<interface>>
+class ContenidoDAOImpl {
+    -url : String
 
-    +guardar(Suscripcion) boolean
-    +listarTodas() List~Suscripcion~
-    +listarPorUsuario(String) List~Suscripcion~
+    +guardar(contenido : Contenido) boolean
+    +actualizar(contenido : Contenido) boolean
+    +eliminar(id : long) boolean
+    +listarTodos() List
+    +listarPorGenero(genero : String) List
 }
 
-class ContenidoDAOImpl{
-    -String url
+class SuscripcionDAO {
+    <<Interface>>
 
-    +guardar(Contenido) boolean
-    +actualizar(Contenido) boolean
-    +eliminar(long) boolean
-    +listarTodos() List~Contenido~
-    +listarPorGenero(String) List~Contenido~
+    +guardar(suscripcion : Suscripcion) boolean
+    +listarTodas() List
+    +listarPorUsuario(email : String) List
 }
 
-class SuscripcionDAOImpl{
-    -String url
+class SuscripcionDAOImpl {
+    -url : String
 
-    +guardar(Suscripcion) boolean
-    +listarTodas() List~Suscripcion~
-    +listarPorUsuario(String) List~Suscripcion~
+    +guardar(suscripcion : Suscripcion) boolean
+    +listarTodas() List
+    +listarPorUsuario(email : String) List
 }
 
-%% =========================
-%% SERVICES
-%% =========================
+class CatalogoService {
+    -contenidoDAO : ContenidoDAO
 
-class CatalogoService{
-    -ContenidoDAO contenidoDAO
-
-    +agregarContenido(Contenido) boolean
-    +actualizarContenido(Contenido) boolean
-    +eliminarContenido(long) boolean
-    +listarCatalogo() List~Contenido~
-    +buscarPorGenero(String) List~Contenido~
+    +agregarContenido(contenido : Contenido) boolean
+    +actualizarContenido(contenido : Contenido) boolean
+    +eliminarContenido(id : long) boolean
+    +listarCatalogo() List
+    +buscarPorGenero(genero : String) List
 }
 
-class RecomendacionService{
-    -ContenidoDAO contenidoDAO
+class RecomendacionService {
+    -contenidoDAO : ContenidoDAO
 
-    +recomendarPorGenero(String) List~Contenido~
-    +recomendarSegunFavorito(Contenido) List~Contenido~
+    +recomendarPorGenero(genero : String) List
+    +recomendarSegunFavorito(contenido : Contenido) List
 }
 
-class SuscripcionService{
-    -SuscripcionDAO suscripcionDAO
+class SuscripcionService {
+    -suscripcionDAO : SuscripcionDAO
 
-    +calcularCosto(Calidad) double
-    +contratarSuscripcion(String,Calidad,String) String
-    +obtenerSuscripciones(String) List~Suscripcion~
+    +calcularCosto(calidad : Calidad) double
+    +contratarSuscripcion(email : String, calidad : Calidad, fecha : String) String
+    +obtenerSuscripciones(email : String) List
 }
 
-%% =========================
-%% VISTA
-%% =========================
-
-class VistaConsola{
-    -VistaAdministrador panelAdmin
-    -VistaUsuario panelUsuario
+class VistaConsola {
+    -vistaAdministrador : VistaAdministrador
+    -vistaUsuario : VistaUsuario
 
     +iniciar()
 }
 
-class VistaAdministrador{
-    -CatalogoService catalogoService
+class VistaAdministrador {
+    -catalogoService : CatalogoService
 
     +iniciar()
-    -mostrarMenu()
-    -agregarPelicula()
-    -agregarSerie()
-    -agregarDocumental()
+    +mostrarMenu()
+    +agregarPelicula()
+    +agregarSerie()
+    +agregarDocumental()
 }
 
-class VistaUsuario{
-    -CatalogoService catalogoService
-    -RecomendacionService recomendacionService
-    -SuscripcionService suscripcionService
+class VistaUsuario {
+    -catalogoService : CatalogoService
+    -recomendacionService : RecomendacionService
+    -suscripcionService : SuscripcionService
 
     +iniciar()
-    -mostrarMenu()
-    -verCatalogo()
-    -verCatalogoPorGenero()
-    -mostrarLista()
+    +mostrarMenu()
+    +verCatalogo()
+    +verCatalogoPorGenero()
+    +mostrarLista()
 }
 
-class LectorConsola{
-    <<utility>>
-    -Scanner sc
+class LectorConsola {
+    <<Utility>>
 
-    +leerTexto()
-    +leerEntero()
-    +leerDouble()
+    +leerTexto() String
+    +leerEntero() int
+    +leerDouble() double
 }
 
-%% =========================
-%% APP
-%% =========================
-
-class Ejstreamflow{
-    +main(String[])
+class Ejstreamflow {
+    +main(args : String[])
 }
-
-%% =========================
-%% HERENCIA
-%% =========================
 
 Contenido <|-- Pelicula
 Contenido <|-- Serie
 Contenido <|-- Documental
 
-%% =========================
-%% IMPLEMENTACIÓN
-%% =========================
+Contenido --> Calidad
+Suscripcion --> Calidad
 
 ContenidoDAO <|.. ContenidoDAOImpl
 SuscripcionDAO <|.. SuscripcionDAOImpl
 
-%% =========================
-%% RELACIONES MODELO
-%% =========================
-
-Contenido --> Calidad : calidadDisponible
-Suscripcion --> Calidad : calidad
-
-%% =========================
-%% DEPENDENCIAS SERVICES
-%% =========================
-
 CatalogoService --> ContenidoDAO
 RecomendacionService --> ContenidoDAO
 SuscripcionService --> SuscripcionDAO
-
-%% =========================
-%% DEPENDENCIAS VISTAS
-%% =========================
 
 VistaAdministrador --> CatalogoService
 
@@ -397,14 +358,11 @@ VistaUsuario --> SuscripcionService
 VistaConsola *-- VistaAdministrador
 VistaConsola *-- VistaUsuario
 
-%% =========================
-%% UTILIDADES
-%% =========================
-
 VistaAdministrador ..> LectorConsola
 VistaUsuario ..> LectorConsola
 
 Ejstreamflow --> VistaConsola
+```
 ---
 
 # Descripción de las clases
