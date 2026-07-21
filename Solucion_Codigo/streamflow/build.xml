@@ -70,4 +70,37 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <!--
+    Target de respaldo para correr JUnit 5 en este proyecto Ant.
+ 
+    La integracion nativa de NetBeans para JUnit 5 en proyectos Ant
+    depende de la tarea <junit> de Ant, que no es compatible con el
+    motor de JUnit 5 (Jupiter). En vez de pelear con eso, ejecutamos el
+    ConsoleLauncher oficial de JUnit (jar standalone, sin dependencias
+    externas) directamente con la tarea <java> de Ant, que si funciona
+    sin problemas.
+ 
+    Requisitos:
+      - test-lib/junit-platform-console-standalone-1.10.3.jar debe existir
+      - Los tests ya deben estar compilados (este target los compila solo,
+        via depends="compile-test")
+-->
+<target name="test-junit5" depends="compile-test" description="Corre los tests de JUnit 5 con el ConsoleLauncher standalone">
+    <path id="junit5.classpath">
+        <pathelement location="${build.classes.dir}"/>
+        <pathelement location="${build.test.classes.dir}"/>
+        <pathelement path="${javac.test.classpath}"/>
+        <pathelement location="test-lib/junit-platform-console-standalone-1.10.3.jar"/>
+    </path>
+
+    <echo message="CLASSPATH RESUELTO: ${toString:junit5.classpath}"/>
+
+    <java classname="org.junit.platform.console.ConsoleLauncher" fork="true" failonerror="false">
+        <classpath refid="junit5.classpath"/>
+        <arg value="execute"/>
+        <arg value="--scan-classpath"/>
+        <arg value="--details=tree"/>
+    </java>
+</target>
+
 </project>
