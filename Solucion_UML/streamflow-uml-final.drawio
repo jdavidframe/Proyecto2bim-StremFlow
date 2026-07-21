@@ -1,0 +1,273 @@
+<mxfile host="Electron" agent="streamflow-uml-generator">
+  <diagram id="streamflow-uml-free" name="StreamFlow - Diagrama de Clases">
+    <mxGraphModel dx="4419" dy="3577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1844" pageHeight="1782" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n2" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="«enumeration» Calidad" vertex="1">
+          <mxGeometry height="94" width="212" x="-410.5" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="n2" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="SD, HD, UHD_4K&lt;br&gt;-precioMensual: double" vertex="1">
+          <mxGeometry height="40" width="212" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="n2" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getPrecioMensual(): double" vertex="1">
+          <mxGeometry height="20" width="212" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="«abstract» Contenido" vertex="1">
+          <mxGeometry height="314" width="291" x="80" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" parent="n5" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-id: long&lt;br&gt;-titulo: String&lt;br&gt;-genero: String&lt;br&gt;-calidadDisponible: Calidad" vertex="1">
+          <mxGeometry height="80" width="291" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" parent="n5" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getId(): long&lt;br&gt;+setId(id: long): void&lt;br&gt;+getTitulo(): String&lt;br&gt;+setTitulo(t: String): void&lt;br&gt;+getGenero(): String&lt;br&gt;+setGenero(g: String): void&lt;br&gt;+getCalidadDisponible(): Calidad&lt;br&gt;+setCalidadDisponible(c: Calidad): void&lt;br&gt;+reproducir(): String {abstract}&lt;br&gt;+obtenerDetalles(): String {abstract}" vertex="1">
+          <mxGeometry height="200" width="291" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Pelicula" vertex="1">
+          <mxGeometry height="134" width="251" x="440" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" parent="n8" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-duracionMinutos: int" vertex="1">
+          <mxGeometry height="20" width="251" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" parent="n8" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getDuracionMinutos(): int&lt;br&gt;+setDuracionMinutos(m: int): void&lt;br&gt;+reproducir(): String&lt;br&gt;+obtenerDetalles(): String" vertex="1">
+          <mxGeometry height="80" width="251" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Serie" vertex="1">
+          <mxGeometry height="134" width="218" x="-218" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" parent="n11" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-temporadas: int" vertex="1">
+          <mxGeometry height="20" width="218" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" parent="n11" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getTemporadas(): int&lt;br&gt;+setTemporadas(t: int): void&lt;br&gt;+reproducir(): String&lt;br&gt;+obtenerDetalles(): String" vertex="1">
+          <mxGeometry height="80" width="218" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Documental" vertex="1">
+          <mxGeometry height="134" width="225" x="113" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" parent="n14" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-director: String" vertex="1">
+          <mxGeometry height="20" width="225" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" parent="n14" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getDirector(): String&lt;br&gt;+setDirector(d: String): void&lt;br&gt;+reproducir(): String&lt;br&gt;+obtenerDetalles(): String" vertex="1">
+          <mxGeometry height="80" width="225" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Usuario" vertex="1">
+          <mxGeometry height="154" width="212" x="1770" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" parent="n17" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-nombre: String&lt;br&gt;-email: String" vertex="1">
+          <mxGeometry height="40" width="212" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" parent="n17" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getNombre(): String&lt;br&gt;+setNombre(n: String): void&lt;br&gt;+getEmail(): String&lt;br&gt;+setEmail(e: String): void" vertex="1">
+          <mxGeometry height="80" width="212" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Suscripcion" vertex="1">
+          <mxGeometry height="334" width="251" x="-430" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" parent="n20" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-id: long&lt;br&gt;-usuarioEmail: String&lt;br&gt;-calidad: Calidad&lt;br&gt;-costoMensual: double&lt;br&gt;-fechaInicio: String" vertex="1">
+          <mxGeometry height="100" width="251" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" parent="n20" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+getId(): long&lt;br&gt;+setId(id: long): void&lt;br&gt;+getUsuarioEmail(): String&lt;br&gt;+setUsuarioEmail(e: String): void&lt;br&gt;+getCalidad(): Calidad&lt;br&gt;+setCalidad(c: Calidad): void&lt;br&gt;+getCostoMensual(): double&lt;br&gt;+setCostoMensual(c: double): void&lt;br&gt;+getFechaInicio(): String&lt;br&gt;+setFechaInicio(f: String): void" vertex="1">
+          <mxGeometry height="200" width="251" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="«interface» ContenidoDAO" vertex="1">
+          <mxGeometry height="154" width="324" x="1360" y="-690" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" parent="n23" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="&lt;i&gt;(sin atributos)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="20" width="324" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n25" parent="n23" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+guardar(c: Contenido): boolean&lt;br&gt;+actualizar(c: Contenido): boolean&lt;br&gt;+eliminar(id: long): boolean&lt;br&gt;+listarTodos(): List&lt;Contenido&gt;&lt;br&gt;+listarPorGenero(g: String): List&lt;Contenido&gt;" vertex="1">
+          <mxGeometry height="100" width="324" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="«interface» SuscripcionDAO" vertex="1">
+          <mxGeometry height="134" width="370" x="-32" y="-450" as="geometry" />
+        </mxCell>
+        <mxCell id="n27" parent="n26" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="&lt;i&gt;(sin atributos)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="20" width="370" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" parent="n26" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+guardar(s: Suscripcion): boolean&lt;br&gt;+listarPorUsuario(email: String): List&lt;Suscripcion&gt;&lt;br&gt;+listarTodas(): List&lt;Suscripcion&gt;&lt;br&gt;+buscarUltimaPorUsuario(email: String): Suscripcion" vertex="1">
+          <mxGeometry height="80" width="370" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="ContenidoDAOImpl" vertex="1">
+          <mxGeometry height="154" width="324" x="1690" y="-300" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" parent="n29" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-url: String" vertex="1">
+          <mxGeometry height="20" width="324" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" parent="n29" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+guardar(c: Contenido): boolean&lt;br&gt;+actualizar(c: Contenido): boolean&lt;br&gt;+eliminar(id: long): boolean&lt;br&gt;+listarTodos(): List&lt;Contenido&gt;&lt;br&gt;+listarPorGenero(g: String): List&lt;Contenido&gt;" vertex="1">
+          <mxGeometry height="100" width="324" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n32" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="SuscripcionDAOImpl" vertex="1">
+          <mxGeometry height="134" width="370" x="-32" y="-210" as="geometry" />
+        </mxCell>
+        <mxCell id="n33" parent="n32" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-url: String" vertex="1">
+          <mxGeometry height="20" width="370" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n34" parent="n32" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+guardar(s: Suscripcion): boolean&lt;br&gt;+listarPorUsuario(email: String): List&lt;Suscripcion&gt;&lt;br&gt;+listarTodas(): List&lt;Suscripcion&gt;&lt;br&gt;+buscarUltimaPorUsuario(email: String): Suscripcion" vertex="1">
+          <mxGeometry height="80" width="370" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n35" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="CatalogoService" vertex="1">
+          <mxGeometry height="154" width="324" x="1340" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="n36" parent="n35" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-contenidoDAO: ContenidoDAO" vertex="1">
+          <mxGeometry height="20" width="324" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n37" parent="n35" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+agregarContenido(c: Contenido): boolean&lt;br&gt;+actualizarContenido(c: Contenido): boolean&lt;br&gt;+eliminarContenido(id: long): boolean&lt;br&gt;+listarCatalogo(): List&lt;Contenido&gt;&lt;br&gt;+listarPorGenero(g: String): List&lt;Contenido&gt;" vertex="1">
+          <mxGeometry height="100" width="324" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n38" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="RecomendacionService" vertex="1">
+          <mxGeometry height="94" width="397" x="550" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="n39" parent="n38" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-contenidoDAO: ContenidoDAO" vertex="1">
+          <mxGeometry height="20" width="397" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n40" parent="n38" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+recomendarPorGenero(g: String): List&lt;Contenido&gt;&lt;br&gt;+recomendarSegunFavorito(f: Contenido): List&lt;Contenido&gt;" vertex="1">
+          <mxGeometry height="40" width="397" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n41" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="SuscripcionService" vertex="1">
+          <mxGeometry height="134" width="420" x="-49" y="-710" as="geometry" />
+        </mxCell>
+        <mxCell id="n42" parent="n41" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-suscripcionDAO: SuscripcionDAO" vertex="1">
+          <mxGeometry height="20" width="420" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n43" parent="n41" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+calcularCosto(c: Calidad): double&lt;br&gt;+contratarSuscripcion(email: String, c: Calidad, f: String): String&lt;br&gt;+obtenerSuscripcionVigente(email: String): Suscripcion&lt;br&gt;+historial(email: String): List&lt;Suscripcion&gt;" vertex="1">
+          <mxGeometry height="80" width="420" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n44" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="VistaConsola" vertex="1">
+          <mxGeometry height="94" width="238" x="1050" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="n45" parent="n44" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-panelAdmin: VistaAdministrador&lt;br&gt;-panelUsuario: VistaUsuario" vertex="1">
+          <mxGeometry height="40" width="238" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n46" parent="n44" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+iniciar(): void" vertex="1">
+          <mxGeometry height="20" width="238" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="n47" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="VistaAdministrador" vertex="1">
+          <mxGeometry height="214" width="251" x="870" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="n48" parent="n47" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-catalogoService: CatalogoService" vertex="1">
+          <mxGeometry height="20" width="251" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n49" parent="n47" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+iniciar(): void&lt;br&gt;-mostrarMenu(): void&lt;br&gt;-agregarPelicula(): void&lt;br&gt;-agregarSerie(): void&lt;br&gt;-agregarDocumental(): void&lt;br&gt;-guardar(c: Contenido): void&lt;br&gt;-listarCatalogo(): void&lt;br&gt;-eliminarContenido(): void" vertex="1">
+          <mxGeometry height="160" width="251" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n53" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="LectorConsola" vertex="1">
+          <mxGeometry height="114" width="298" x="1250" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="n54" parent="n53" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-sc: Scanner {static}" vertex="1">
+          <mxGeometry height="20" width="298" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n55" parent="n53" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+leerEntero(msg: String): int {static}&lt;br&gt;+leerTexto(msg: String): String {static}&lt;br&gt;(otros metodos estaticos de lectura)" vertex="1">
+          <mxGeometry height="60" width="298" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n56" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Ejstreamflow" vertex="1">
+          <mxGeometry height="74" width="271" x="1490" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="n57" parent="n56" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="&lt;i&gt;(sin atributos)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="20" width="271" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n58" parent="n56" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+main(args: String[]): void {static}" vertex="1">
+          <mxGeometry height="20" width="271" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="n59" edge="1" parent="1" source="n8" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;fontSize=9;" target="n5" value="extends">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n60" edge="1" parent="1" source="n11" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;fontSize=9;" target="n5" value="extends">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n61" edge="1" parent="1" source="n14" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;fontSize=9;" target="n5" value="extends">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n62" edge="1" parent="1" source="n5" style="endArrow=none;html=1;rounded=0;fontSize=9;" target="n2" value="calidadDisponible">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n63" edge="1" parent="1" source="n20" style="endArrow=none;html=1;rounded=0;fontSize=9;" target="n2" value="calidad">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n64" edge="1" parent="1" source="n29" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;fontSize=9;" target="n23" value="implements">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n65" edge="1" parent="1" source="n32" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;fontSize=9;" target="n26" value="implements">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n66" edge="1" parent="1" source="n23" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n5" value="usa">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="-310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n67" edge="1" parent="1" source="n26" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n20" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n68" edge="1" parent="1" source="n35" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n23" value="DIP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n69" edge="1" parent="1" source="n38" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n23" value="DIP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n70" edge="1" parent="1" source="n41" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n26" value="DIP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n71" edge="1" parent="1" source="n35" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n5" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n72" edge="1" parent="1" source="n38" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n5" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n73" edge="1" parent="1" source="n41" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n20" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n74" edge="1" parent="1" source="n44" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n47" value="panelAdmin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n75" edge="1" parent="1" source="n44" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n50" value="panelUsuario">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n76" edge="1" parent="1" source="n47" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n35" value="catalogoService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n77" edge="1" parent="1" source="n50" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n35" value="catalogoService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n78" edge="1" parent="1" source="n50" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n38" value="recomendacionService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n79" edge="1" parent="1" source="n50" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;fontSize=9;" target="n41" value="suscripcionService">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n80" edge="1" parent="1" source="n50" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n5" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n81" edge="1" parent="1" source="n50" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n5" value="usa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n82" edge="1" parent="1" source="n50" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n20" value="usa">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-300" y="-880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n83" edge="1" parent="1" source="n44" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n53" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n84" edge="1" parent="1" source="n56" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n44" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KEXOB6Cq32yiQR0h9YVm-2" edge="1" parent="1" source="n47" style="endArrow=open;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=9;" target="n50" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1022" y="1399" as="sourcePoint" />
+            <mxPoint x="334" y="404" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n50" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=1;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="VistaUsuario" vertex="1">
+          <mxGeometry height="274" width="344" x="860" y="-1030" as="geometry" />
+        </mxCell>
+        <mxCell id="n51" parent="n50" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="-catalogoService: CatalogoService&lt;br&gt;-recomendacionService: RecomendacionService&lt;br&gt;-suscripcionService: SuscripcionService" vertex="1">
+          <mxGeometry height="60" width="344" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="n52" parent="n50" style="text;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;spacingBottom=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=0;" value="+iniciar(): void&lt;br&gt;-mostrarMenu(): void&lt;br&gt;-verCatalogo(): void&lt;br&gt;-verCatalogoPorGenero(): void&lt;br&gt;-mostrarLista(lista: List, msg: String): void&lt;br&gt;-contratarSuscripcion(): void&lt;br&gt;-verSuscripcionVigente(): void&lt;br&gt;-reproducirContenido(): void&lt;br&gt;-mostrarRecomendacionesPara(v: Contenido): void" vertex="1">
+          <mxGeometry height="180" width="344" y="94" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
